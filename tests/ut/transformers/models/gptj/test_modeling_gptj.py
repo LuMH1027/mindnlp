@@ -558,7 +558,7 @@ class GPTJModelTest(ModelTesterMixin, GenerationTesterMixin, unittest.TestCase):
 
 @require_mindspore
 class GPTJModelLanguageGenerationTest(unittest.TestCase):
-    @tooslow
+   # @tooslow
     def test_lm_generate_gptj(self):
         # Marked as @tooslow due to GPU OOM
         for checkpointing in [True, False]:

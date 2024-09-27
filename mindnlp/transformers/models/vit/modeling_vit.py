@@ -95,6 +95,7 @@ class ViTEmbeddings(nn.Module):
             scale_factor=(h0 / math.sqrt(num_positions), w0 / math.sqrt(num_positions)),
             mode="bicubic",
             align_corners=False,
+            recompute_scale_factor=True,
         )
         assert int(h0) == patch_pos_embed.shape[-2] and int(w0) == patch_pos_embed.shape[-1]
         patch_pos_embed = patch_pos_embed.permute(0, 2, 3, 1).view(1, -1, dim)
